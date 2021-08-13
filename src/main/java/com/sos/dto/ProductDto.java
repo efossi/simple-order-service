@@ -27,7 +27,6 @@ public class ProductDto {
     private String name;
     
     public double getPrice() {
-        System.out.println("Getting product price code: "+code);
         return ProductDb.valueOf(code).getPrice();
     }
     
