@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sos.dto.OrderRequest;
-import com.sos.service.OrderServiceStepOneImpl;
+import com.sos.service.OrderServiceStepTwoImpl;
 
 @RestController
 @RequestMapping(path = "/", produces = MediaType.APPLICATION_JSON_VALUE)
 public class OrderResource {
 
-    private OrderServiceStepOneImpl orderService;
+    private OrderServiceStepTwoImpl orderService;
     
-    public OrderResource( OrderServiceStepOneImpl orderService ) {
+    public OrderResource( OrderServiceStepTwoImpl orderService ) {
         this.orderService = orderService;
     }
 

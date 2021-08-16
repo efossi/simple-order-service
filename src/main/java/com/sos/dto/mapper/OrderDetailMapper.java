@@ -12,7 +12,7 @@ public class OrderDetailMapper {
     public static OrderDetailDto toDto(OrderDetail detail) {
 
         return new OrderDetailDto()
-                .setProduct( ProductMapper.toDto(detail.getProduct()))
+                .setProduct( ProductMapper.toSimpleDto(detail.getProduct()))
                 .setQuantity(detail.getQuantity());
     }
     
