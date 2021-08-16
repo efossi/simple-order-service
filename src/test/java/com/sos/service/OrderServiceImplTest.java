@@ -8,16 +8,20 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import com.sos.dto.OrderDetailDto;
 import com.sos.dto.OrderRequest;
 import com.sos.dto.ProductDto;
-import com.sos.dto.SimpleProductDto;
+import com.sos.repository.OrderRepository;
 
 class OrderServiceImplTest {
     @InjectMocks
-    private OrderServiceStepTwoImpl orderService;
+    private OrderServiceStepThreeImpl orderService;
+    
+    @Mock
+    OrderRepository orderRepository;
     
     @BeforeEach
     public void setup() {
@@ -93,14 +97,14 @@ class OrderServiceImplTest {
         orderDetails.add(getOrderDetail("Apple", 30));
         
         orderRequest.setDetails(orderDetails);
-        
+
         assertEquals(900, orderService.placeOrder(orderRequest).getOrderTotal());
     }
     
     private OrderDetailDto getOrderDetail(String productCode, int quantity) {
         
         OrderDetailDto d = new OrderDetailDto();
-        ProductDto p = new SimpleProductDto();
+        ProductDto p = new ProductDto();
         p.setCode(productCode);
         d.setProduct(p);
         d.setQuantity(quantity);

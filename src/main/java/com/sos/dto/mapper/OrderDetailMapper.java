@@ -4,8 +4,6 @@ import java.util.UUID;
 
 import com.sos.dto.OrderDetailDto;
 import com.sos.model.order.OrderDetail;
-
-
 public class OrderDetailMapper {
     
     

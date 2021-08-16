@@ -1,13 +1,12 @@
 package com.sos.dto.mapper;
 
 import com.sos.dto.ProductDto;
-import com.sos.dto.SimpleProductDto;
 import com.sos.model.product.Product;
 
 public class ProductMapper {
     public static ProductDto toSimpleDto(Product product) {
     
-        return new SimpleProductDto()
+        return new ProductDto()
                 .setCode(product.getCode())
                 .setName(product.getName());
     }

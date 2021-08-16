@@ -4,8 +4,8 @@ import org.springframework.stereotype.Service;
 
 import com.sos.dto.OrderDetailDto;
 import com.sos.dto.ProductDto;
-import com.sos.dto.PromotionalProductDto;
 import com.sos.model.ProductDb;
+import com.sos.dto.PromotionalProductDto;
 
 @Service
 public class ApplePromotion implements PromotionCommand{
@@ -14,7 +14,7 @@ public class ApplePromotion implements PromotionCommand{
         int totalNumnerOfElements = requestDetails.getQuantity();
 
         double totalPrice = (double) ((totalNumnerOfElements/2) * ProductDb.Apple.getPrice()) + 
-                (totalNumnerOfElements % 2) * ProductDb.Apple.getPrice() ;
+                                (totalNumnerOfElements % 2) * ProductDb.Apple.getPrice() ;
         
         ProductDto promotionalApple = new PromotionalProductDto()
                 .setCode(ProductDb.Apple.toString())

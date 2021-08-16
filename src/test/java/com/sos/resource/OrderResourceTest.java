@@ -14,7 +14,6 @@ import org.mockito.MockitoAnnotations;
 import com.sos.dto.OrderDetailDto;
 import com.sos.dto.OrderRequest;
 import com.sos.dto.ProductDto;
-import com.sos.dto.SimpleProductDto;
 import com.sos.service.OrderService;
 
 
@@ -55,7 +54,7 @@ class OrderResourceTest {
     private OrderDetailDto getOrderDetail(String productCode, int quantity) {
         
         OrderDetailDto d = new OrderDetailDto();
-        ProductDto p = new SimpleProductDto();
+        ProductDto p = new ProductDto();
         p.setCode(productCode);
         d.setProduct(p);
         d.setQuantity(quantity);
